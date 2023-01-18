@@ -65,11 +65,10 @@ class instance extends instance_skel {
         width: 12,
       },
       {
-        label: 'Ontime server IP',
+        label: 'Ontime server IP/hostname',
         id: 'host',
         type: 'textinput',
         default: '127.0.0.1',
-        regex: this.REGEX_IP,
         width: 6,
       },
       {
