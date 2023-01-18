@@ -58,11 +58,10 @@ class instance extends instance_skel {
         width: 12,
       },
       {
-        label: 'Ontime server IP',
+        label: 'Ontime server IP/hostname',
         id: 'host',
         type: 'textinput',
         default: '127.0.0.1',
-        regex: this.REGEX_IP,
         width: 6,
       },
       {
@@ -171,7 +170,6 @@ class instance extends instance_skel {
       this.setVariable('timer_finish', timer_finish.hours + ':' + timer_finish.minutes + ':' + timer_finish.seconds)
 
       this.checkFeedbacks('timer_negative')
-
     })
 
     socket.on('playstate', (data) => {
@@ -194,7 +192,6 @@ class instance extends instance_skel {
         noteNext: status.titles.noteNext,
       })
       //log('info', JSON.stringify(status))
-
     })
 
     socket.on('onAir', (data) => {
@@ -241,7 +238,7 @@ class instance extends instance_skel {
         return {
           color: feedback.options.roll_fg,
           bgcolor: feedback.options.roll_bg,
-        } 
+        }
       } else {
         return false
       }
